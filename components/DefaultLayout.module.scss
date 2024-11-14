@@ -1,0 +1,40 @@
+.body {
+  font-size: var(--type-scale-5);
+  padding: 24px;
+}
+
+.pixel {
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.prompt {
+  background: var(--theme-background);
+  border: 1px solid var(--theme-border);
+  border-radius: 4px;
+  bottom: 24px;
+  box-shadow: 0 1px 4px var(--theme-box-shadow-modal);
+  font-size: var(--type-scale-fixed-tiny);
+  max-width: 156px;
+  padding: 16px 16px 16px 16px;
+  position: fixed;
+  right: 24px;
+  z-index: 1;
+}
+
+.link {
+  color: var(--theme-text);
+  font-weight: 600;
+  text-decoration: none;
+
+  &:visited {
+    color: var(--theme-text);
+  }
+
+  &:hover {
+    color: var(--theme-primary);
+  }
+}
