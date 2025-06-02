@@ -4,8 +4,14 @@ import * as Constants from '@common/constants';
 export default async function apiIndex(req, res) {
   await Server.cors(req, res);
 
+  const originalMessage = 'hey there, friend';
+  const encryptedOriginalMessage = await Server.encrypt(originalMessage);
+  const decryptedOriginalMessage = await Server.decrypt(encryptedOriginalMessage);
+
   res.json({
     success: true,
-    message: 'hey there, friend.',
+    originalMessage,
+    encryptedOriginalMessage,
+    decryptedOriginalMessage,
   });
 }
