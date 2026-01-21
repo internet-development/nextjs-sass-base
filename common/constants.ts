@@ -18,13 +18,13 @@ export const Users = {
 
 export const Tiers = {
   PAYING: 899,
-  GENERAL_CO_WORKING: 32900,
+  GENERAL_CO_WORKING: 40400,
   PARTNER: 279000,
 };
 
 export const Payments = {
   899: 'PAYING',
-  32900: 'GENERAL_CO_WORKING',
+  40400: 'GENERAL_CO_WORKING',
   279000: 'PARTNER',
 };
 
