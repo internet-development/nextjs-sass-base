@@ -1,5 +1,5 @@
-import '@root/animations.scss';
-import '@root/global.scss';
+import '@root/animations.css';
+import '@root/global.css';
 
 import * as Constants from '@common/constants';
 import * as Utilities from '@common/utilities';

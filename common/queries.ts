@@ -29,21 +29,9 @@ export async function getData({ route, key, body }, qualifier = 'data') {
   return result;
 }
 
-export async function onUserListData({ key }) {
-  const route = `${Constants.API}/data`;
-  const body = {};
-  return await getData({ route, key, body });
-}
-
-export async function onUserDeleteData({ id, key }) {
-  const route = `${Constants.API}/data/delete`;
+export async function onDeleteDocumentById({ id, key }) {
+  const route = `${Constants.API}/documents/delete`;
   const body = { id };
-  return await getData({ route, key, body });
-}
-
-export async function onRefreshDocuments({ key, type, domain }) {
-  const route = `${Constants.API}/documents`;
-  const body = { type, domain };
   return await getData({ route, key, body });
 }
 
@@ -51,24 +39,6 @@ export async function onGetDocumentById({ id }) {
   const route = `${Constants.API}/documents/${id}`;
   const body = {};
   return await getData({ route, key: null, body });
-}
-
-export async function onUserCreateDocument({ key, type, domain }) {
-  const route = `${Constants.API}/documents/create`;
-  const body = { type, domain };
-  return await getData({ route, key, body });
-}
-
-export async function onDeleteDocumentById({ id, key }) {
-  const route = `${Constants.API}/documents/delete`;
-  const body = { id };
-  return await getData({ route, key, body });
-}
-
-export async function onUpdateDocumentById({ id, key, data }) {
-  const route = `${Constants.API}/documents/update`;
-  const body = { id, data };
-  return await getData({ route, key, body });
 }
 
 export async function onPublicUserAuthenticate({ email, password }) {
@@ -83,27 +53,33 @@ export async function onPublicUserForgotPassword({ email }) {
   return getData({ route, key: null, body }, 'success');
 }
 
+export async function onRefreshDocuments({ key, type, domain }) {
+  const route = `${Constants.API}/documents`;
+  const body = { type, domain };
+  return await getData({ route, key, body });
+}
+
+export async function onRefreshPosts({ key, type, user_id }) {
+  const route = `${Constants.API}/posts`;
+  const body = { type, user_id };
+  return await getData({ route, key, body });
+}
+
+export async function onUpdateDocumentById({ id, key, data }) {
+  const route = `${Constants.API}/documents/update`;
+  const body = { id, data };
+  return await getData({ route, key, body });
+}
+
 export async function onUserChangePassword({ key, password }) {
   const route = `${Constants.API}/users/update-viewer-password`;
   const body = { password };
   return getData({ route, key, body });
 }
 
-export async function onUserRegenerateAPIKey({ email, password }) {
-  const route = `${Constants.API}/users/regenerate-key`;
-  const body = { email, password };
-  return getData({ route, key: null, body }, 'user');
-}
-
-export async function onUserUnsubscribeServices({ key }) {
-  const route = `${Constants.API}/users/subscriptions/unsubscribe`;
-  const body = null;
-  return getData({ route, key, body }, 'user');
-}
-
-export async function onRefreshPosts({ key, type, user_id }) {
-  const route = `${Constants.API}/posts`;
-  const body = { type, user_id };
+export async function onUserCreateDocument({ key, type, domain }) {
+  const route = `${Constants.API}/documents/create`;
+  const body = { type, domain };
   return await getData({ route, key, body });
 }
 
@@ -119,10 +95,22 @@ export async function onUserCreateThread({ fields, key, src, type }) {
   return getData({ route, key, body });
 }
 
+export async function onUserDeleteData({ id, key }) {
+  const route = `${Constants.API}/data/delete`;
+  const body = { id };
+  return await getData({ route, key, body });
+}
+
 export async function onUserDeletePost({ id, key }) {
   const route = `${Constants.API}/posts/delete`;
   const body = { id };
   return getData({ route, key, body });
+}
+
+export async function onUserListData({ key }) {
+  const route = `${Constants.API}/data`;
+  const body = {};
+  return await getData({ route, key, body });
 }
 
 export async function onUserListThreadReplies({ id, key, orderBy }) {
@@ -135,6 +123,18 @@ export async function onUserListThreads({ key, orderBy }) {
   const route = `${Constants.API}/posts/all-threads`;
   const body = { orderBy };
   return getData({ route, key, body });
+}
+
+export async function onUserRegenerateAPIKey({ email, password }) {
+  const route = `${Constants.API}/users/regenerate-key`;
+  const body = { email, password };
+  return getData({ route, key: null, body }, 'user');
+}
+
+export async function onUserUnsubscribeServices({ key }) {
+  const route = `${Constants.API}/users/subscriptions/unsubscribe`;
+  const body = null;
+  return getData({ route, key, body }, 'user');
 }
 
 export async function onUserUploadDataGCS({ domain, file, key }) {

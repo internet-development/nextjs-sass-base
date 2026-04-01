@@ -1,4 +1,4 @@
-# NEXTJS-SASS-BASE
+# NEXTJS-CSS-BASE
 
 **[Live Demo](https://wireframes.internet.dev)**
 
@@ -10,7 +10,7 @@ This version of the template repository was made to be as light as possible.
 
 Start by cloning the repository, or by clicking on **Use this template** above.
 
-You will have wanted to setup your development environment by following steps [here](https://github.com/internet-development/nextjs-sass-starter/issues/3).
+You will have wanted to setup your development environment by following steps [here](https://github.com/internet-development/nextjs-css-base/issues/3).
 
 Then run the server
 

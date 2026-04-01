@@ -1,4 +1,4 @@
-import styles from '@components/DefaultLayout.module.scss';
+import styles from '@components/DefaultLayout.module.css';
 
 import * as React from 'react';
 
@@ -12,7 +12,7 @@ export interface PageProps {
 }
 
 export default function Page(props: PageProps) {
-  const source = `https://github.com/internet-development/nextjs-sass-base/blob/main/pages${props.url.replace('https://wireframes.internet.dev', '')}.tsx`;
+  const source = `https://github.com/internet-development/nextjs-css-base/blob/main/pages${props.url.replace('https://wireframes.internet.dev', '')}.tsx`;
 
   return (
     <>

@@ -22,11 +22,11 @@ dfn,
 div,
 dl,
 dt,
-embed,
 em,
-figure,
-figcaption,
+embed,
 fieldset,
+figcaption,
+figure,
 footer,
 form,
 h1,
@@ -123,21 +123,24 @@ body.theme-light {
   --theme-success: var(--color-green-60);
   --theme-success-subdued: var(--color-green-60-3);
   --theme-text: var(--color-black-100);
+}
 
-  &::-webkit-scrollbar {
-    background: transparent;
-    height: 8px;
-    width: 8px;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
+body.theme-light::-webkit-scrollbar {
+  background: transparent;
+  height: 8px;
+  width: 8px;
+}
+
+body.theme-light::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+
+body.theme-light::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+
+body.theme-light::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 body.theme-dark {
@@ -163,23 +166,24 @@ body.theme-dark {
   --theme-success: var(--color-green-60);
   --theme-success-subdued: var(--color-green-60-3);
   --theme-text: var(--color-white);
-
-  &::-webkit-scrollbar {
-    background: transparent;
-    height: 8px;
-    width: 8px;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--theme-foreground);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-foreground-secondary);
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: var(--theme-foreground-secondary);
-  }
 }
-#__next {
+
+body.theme-dark::-webkit-scrollbar {
+  background: transparent;
+  height: 8px;
+  width: 8px;
+}
+
+body.theme-dark::-webkit-scrollbar-track {
+  background: var(--theme-foreground);
+}
+
+body.theme-dark::-webkit-scrollbar-thumb {
+  background: var(--theme-foreground-secondary);
+}
+
+body.theme-dark::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-foreground-secondary);
 }
 
 html,
@@ -288,8 +292,11 @@ body {
   font-family: var(--font-family);
   font-size: 16px;
   font-variant-numeric: tabular-nums;
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  html,
+  body {
     font-size: 12px;
   }
 }

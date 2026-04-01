@@ -3,6 +3,20 @@
   padding: 24px;
 }
 
+.link {
+  color: var(--theme-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: var(--theme-text);
+}
+
+.link:hover {
+  color: var(--theme-primary);
+}
+
 .pixel {
   height: 1px;
   left: 0;
@@ -23,18 +37,4 @@
   position: fixed;
   right: 24px;
   z-index: 1;
-}
-
-.link {
-  color: var(--theme-text);
-  font-weight: 600;
-  text-decoration: none;
-
-  &:visited {
-    color: var(--theme-text);
-  }
-
-  &:hover {
-    color: var(--theme-primary);
-  }
 }
